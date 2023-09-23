@@ -185,7 +185,7 @@ q_{ik}&amp;:=q_{ik} + \alpha[\sum_{u,i\in R} (r_{ui}-{\sum_{k=1}}^k p_{uk}q_{ik}
 <ul>
 <li>分类⽬录（1990s）：覆盖少量热门⽹站。Hao123 Yahoo</li>
 <li>搜索引擎（2000s）：通过搜索词明确需求。Google Baidu</li>
-<li>推荐系统（2010s）：不需要⽤户提供明确的需求，通过分析⽤ 户的历史⾏为给⽤户的兴趣进⾏建模，从⽽主动给⽤户推荐能 够满⾜他们兴趣和需求的信息。</li>
+<li>推荐系统（2010s）：不需要⽤户提供明确的需求，通过分析⽤ 户的历史⾏为给⽤户的兴趣进⾏建模，从⽽主动给⽤户推荐能 够满⾜他们兴趣和需求的信息。 <span id="more"></span></li>
 </ul></li>
 </ul></li>
 <li><p>什么是推荐系统</p>
@@ -284,7 +284,7 @@ q_{ik}&amp;:=q_{ik} + \alpha[\sum_{u,i\in R} (r_{ui}-{\sum_{k=1}}^k p_{uk}q_{ik}
 <li><strong>基于协同过滤的推荐</strong> 找到和自己历史兴趣相似的用户, 看看他们最近在看什么电影</li>
 </ul></li>
 <li><p>推荐系统的应用场景 feed 流 信息流</p>
-<p><img src="/img/recommend1.png" /></p></li>
+<p><img src="https://pic.imgdb.cn/item/650ec1e1c458853aef155858.png" /></p></li>
 <li><p>推荐系统和Web项目的区别</p>
 <ul>
 <li>稳定的信息流通系统 V.S. 通过信息过滤实现目标提升
