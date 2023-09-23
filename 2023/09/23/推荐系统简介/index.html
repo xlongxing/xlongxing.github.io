@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>categories |  Recommendation</title>
+      <title>推荐系统简介 |  Recommendation</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -55,12 +55,320 @@
       
     <main class="content on">
       <section class="outer">
+  <article
+  id="post-推荐系统简介"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  推荐系统简介
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/09/23/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/" class="article-date">
+  <time datetime="2023-09-23T10:42:03.000Z" itemprop="datePublished">2023-09-23</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%80%E4%BB%8B/">简介</a>
+  </div>
   
-    <h1 class="page-type-title">Categories</h1>
-    <div class="categories-box">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hello/">hello</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BC%A0%E7%BB%9F%E6%8E%A8%E8%8D%90/">传统推荐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BC%A0%E7%BB%9F%E6%8E%A8%E8%8D%90%E6%A8%A1%E5%9E%8B/">传统推荐模型</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%80%E4%BB%8B/">简介</a><span class="category-list-count">1</span></li></ul>
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">670</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">2 min</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
   
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="一-推荐系统简介">一 推荐系统简介</h2>
+<p>​ 个性化推荐(推荐系统)经历了多年的发展，已经成为互联网产品的标配，也是AI成功落地的分支之一，在电商(淘宝/京东)、资讯(今日头条/微博)、音乐(网易云音乐/QQ音乐)、短视频(抖音/快手)等热门应用中,推荐系统都是核心组件之一。</p>
+<ul>
+<li><p>推荐系统产生背景</p>
+<ul>
+<li>信息过载 &amp; 用户需求不明确
+<ul>
+<li>分类⽬录（1990s）：覆盖少量热门⽹站。Hao123 Yahoo</li>
+<li>搜索引擎（2000s）：通过搜索词明确需求。Google Baidu</li>
+<li>推荐系统（2010s）：不需要⽤户提供明确的需求，通过分析⽤ 户的历史⾏为给⽤户的兴趣进⾏建模，从⽽主动给⽤户推荐能 够满⾜他们兴趣和需求的信息。</li>
+</ul></li>
+</ul></li>
+<li><p>什么是推荐系统</p>
+<ul>
+<li>没有明确需求的用户访问了我们的服务, 且服务的物品对用户构成了信息过载, 系统通过一定的规则对物品进行排序,并将排在前面的物品展示给用户,这样的系统就是推荐系统</li>
+</ul></li>
+<li><p>推荐系统 V.S. 搜索引擎</p>
+<table>
+<tr>
+<th>
+</th>
+<th>
+搜索
+</th>
+<th>
+推荐
+</th>
+</tr>
+<tr>
+<td>
+行为方式
+</td>
+<td>
+主动
+</td>
+<td>
+被动
+</td>
+</tr>
+<tr>
+<td>
+意图
+</td>
+<td>
+明确
+</td>
+<td>
+模糊
+</td>
+</tr>
+<tr>
+<td>
+个性化
+</td>
+<td>
+弱
+</td>
+<td>
+强
+</td>
+</tr>
+<tr>
+<td>
+流量分布
+</td>
+<td>
+马太效应
+</td>
+<td>
+长尾效应
+</td>
+</tr>
+<tr>
+<td>
+目标
+</td>
+<td>
+快速满足
+</td>
+<td>
+持续服务
+</td>
+</tr>
+<tr>
+<td>
+评估指标
+</td>
+<td>
+简明
+</td>
+<td>
+复杂
+</td>
+</tr>
+</table></li>
+<li><p>推荐系统的作用</p>
+<ul>
+<li>高效连接用户和物品, 发现长尾商品</li>
+<li>留住用户和内容生产者, 实现商业目标</li>
+</ul></li>
+<li><p>推荐系统的工作原理</p>
+<ul>
+<li><strong>社会化推荐</strong> 向朋友咨询, 社会化推荐, 让好友给自己推荐物品</li>
+<li><strong>基于内容的推荐</strong> 打开搜索引擎, 输入自己喜欢的演员的名字, 然后看看返回结果中还有什么电影是自己没看过的</li>
+<li><strong>基于流行度的推荐</strong> 查看票房排行榜,</li>
+<li><strong>基于协同过滤的推荐</strong> 找到和自己历史兴趣相似的用户, 看看他们最近在看什么电影</li>
+</ul></li>
+<li><p>推荐系统的应用场景 feed 流 信息流</p>
+<p><img src="/img/recommend1.png" /></p></li>
+<li><p>推荐系统和Web项目的区别</p>
+<ul>
+<li>稳定的信息流通系统 V.S. 通过信息过滤实现目标提升
+<ul>
+<li>web项目: 处理复杂逻辑 处理高并发 实现高可用 为用户提供稳定服务, 构建一个稳定的信息流通的服务</li>
+<li>推荐系统: 追求指标增长, 留存率/阅读时间/GMV (Gross Merchandise Volume电商网站成交金额)/视频网站VV (Video View)</li>
+</ul></li>
+<li>确定 V.S. 不确定思维
+<ul>
+<li>web项目: 对结果有确定预期</li>
+<li>推荐系统: 结果是概率问题</li>
+</ul></li>
+</ul></li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/09/23/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/" rel="tag">推荐系统简介</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2023/08/30/LFM%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">LFM算法实现</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.staticfile.org/valine/1.4.16/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "BqIwh5sbNdJayGLgGKR2tbjH-gzGzoHsz",
+    app_key: "1aLuPTN79A1jcWc25KYQMhMs",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -205,6 +513,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link
