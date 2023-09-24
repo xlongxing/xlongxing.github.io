@@ -71,32 +71,6 @@ q_{ik}&amp;:=q_{ik} + \alpha[\sum_{u,i\in R} (r_{ui}-{\sum_{k=1}}^k p_{uk}q_{ik}
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2023/08/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>hello</category>
-      </categories>
-      <tags>
-        <tag>word</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基于回归模型的协同过滤推荐</title>
     <url>/2023/08/30/%E5%9F%BA%E4%BA%8E%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E6%8E%A8%E8%8D%90/</url>
     <content><![CDATA[<h2 id="基于回归模型的协同过滤推荐"><a href="#基于回归模型的协同过滤推荐" class="headerlink" title="基于回归模型的协同过滤推荐"></a>基于回归模型的协同过滤推荐</h2><p>如果我们将评分看作是一个连续的值而不是离散的值，那么就可以借助线性回归思想来预测目标用户对某物品的评分。其中一种实现策略被称为Baseline（基准预测）。</p>
@@ -305,6 +279,98 @@ q_{ik}&amp;:=q_{ik} + \alpha[\sum_{u,i\in R} (r_{ui}-{\sum_{k=1}}^k p_{uk}q_{ik}
       </categories>
       <tags>
         <tag>推荐系统简介</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>推荐系统架构</title>
+    <url>/2023/09/24/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/</url>
+    <content><![CDATA[<h2 id="二-推荐系统设计">二 推荐系统设计</h2>
+<h3 id="推荐系统要素">2.1 推荐系统要素</h3>
+<ul>
+<li>UI 和 UE(前端界面)</li>
+<li>数据 (Lambda架构)</li>
+<li>业务知识</li>
+<li>算法</li>
+</ul>
+<span id="more"></span>
+<h3 id="推荐系统架构">2.2 推荐系统架构</h3>
+<ul>
+<li>推荐系统整体架构</li>
+</ul>
+<p><img src="https://pic.imgdb.cn/item/6510012bc458853aef738bc5.png" /></p>
+<ul>
+<li><p>大数据Lambda架构</p>
+<ul>
+<li><p>由Twitter工程师Nathan Marz(storm项目发起人)提出</p></li>
+<li><p>Lambda系统架构提供了一个结合实时数据和Hadoop预先计算的数据环境和混合平台, 提供一个实时的数据视图</p></li>
+<li><p>分层架构</p>
+<ul>
+<li>批处理层
+<ul>
+<li>数据不可变, 可进行任何计算, 可水平扩展</li>
+<li>高延迟 几分钟~几小时(计算量和数据量不同)</li>
+<li>日志收集 Flume</li>
+<li>分布式存储 Hadoop hdfs</li>
+<li>分布式计算 Hadoop MapReduce &amp; spark</li>
+<li>视图存储数据库
+<ul>
+<li>nosql(HBase/Cassandra)</li>
+<li>Redis/memcache</li>
+<li>MySQL</li>
+</ul></li>
+</ul></li>
+<li>实时处理层
+<ul>
+<li>流式处理, 持续计算</li>
+<li>存储和分析某个窗口期内的数据</li>
+<li>最终正确性(Eventual accuracy)</li>
+<li>实时数据收集 flume &amp; kafka</li>
+<li>实时数据分析 spark streaming/storm/flink</li>
+</ul></li>
+<li>服务层
+<ul>
+<li>支持随机读</li>
+<li>需要在非常短的时间内返回结果</li>
+<li>读取批处理层和实时处理层结果并对其归并</li>
+</ul></li>
+</ul></li>
+<li><p>Lambda架构图</p></li>
+</ul></li>
+</ul>
+<p><img src="https://pic.imgdb.cn/item/6510018ac458853aef739b7b.png" /></p>
+<ul>
+<li><p>推荐算法架构</p>
+<ul>
+<li>召回阶段(海选)
+<ul>
+<li>召回决定了最终推荐结果的天花板</li>
+<li>常用算法:
+<ul>
+<li>协同过滤(基于用户 基于物品的)</li>
+<li>基于内容 (根据用户行为总结出自己的偏好 根据偏好 通过文本挖掘技术找到内容上相似的商品)</li>
+<li>基于隐语义</li>
+</ul></li>
+</ul></li>
+<li>排序阶段
+<ul>
+<li>召回决定了最终推荐结果的天花板, 排序逼近这个极限, 决定了最终的推荐效果</li>
+<li>CTR预估 (点击率预估 使用LR算法) 估计用户是否会点击某个商品 需要用户的点击数据</li>
+</ul></li>
+<li>策略调整</li>
+</ul></li>
+</ul>
+<p><img src="https://pic.imgdb.cn/item/651001a3c458853aef73a085.jpg" /></p>
+<ul>
+<li>推荐系统的整体架构</li>
+</ul>
+<p><img src="https://pic.imgdb.cn/item/6510023cc458853aef745c0d.png" /></p>
+<p><img src="https://pic.imgdb.cn/item/65100252c458853aef747541.png" /></p>
+]]></content>
+      <categories>
+        <category>系统架构</category>
+      </categories>
+      <tags>
+        <tag>系统架构</tag>
       </tags>
   </entry>
 </search>
